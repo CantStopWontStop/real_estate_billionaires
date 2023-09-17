@@ -1,0 +1,47 @@
+---
+title: "Real Estate Billionaires"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(googlesheets4)
+```
+
+```{r}
+data_raw <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1ICjbS8SRTXU4VpcypX9Owot3RtCkByDu3sNh0n8Q6-o/edit#gid=0')
+data_raw
+```
+
+```{r}
+
+data_raw |> 
+    group_by(Gender) |> 
+    summarise(Count = n()) |> 
+    arrange(Count |> desc())
+```
+
+```{r}
+
+data_raw |> 
+    group_by(Religion) |> 
+    summarise(Count = n()) |> 
+    arrange(Count |> desc())
+```
+
+```{r}
+
+data_raw |> 
+    group_by(Race) |> 
+    summarise(Count = n()) |> 
+    arrange(Count |> desc())
+```
+
+```{r}
+
+data_raw |> 
+    group_by(`Education Level`) |> 
+    summarise(Count = n()) |> 
+    arrange(Count |> desc())
+```
