@@ -1,7 +1,12 @@
 ---
 title: "Real Estate Billionaires"
-format: html
+format:
+    html:
+        code-fold: true
 editor: visual
+execute: 
+  echo: false
+  warning: false
 ---
 
 ```{r}
@@ -19,7 +24,16 @@ data_raw
 data_raw |> 
     group_by(Gender) |> 
     summarise(Count = n()) |> 
-    arrange(Count |> desc())
+    arrange(Count |> desc()) |> 
+    ggplot2::ggplot(aes(y= Gender, x = Count, fill = Gender)) +
+    geom_col() +
+    scale_fill_brewer(
+        type = "qual",
+        palette = 2,
+        direction = 1,
+        aesthetics = "fill"
+        ) +
+    theme_minimal()
 ```
 
 ```{r}
@@ -27,7 +41,16 @@ data_raw |>
 data_raw |> 
     group_by(Religion) |> 
     summarise(Count = n()) |> 
-    arrange(Count |> desc())
+    arrange(Count |> desc()) |> 
+    ggplot2::ggplot(aes(y= Religion, x = Count, fill = Religion)) +
+    geom_col() +
+    scale_fill_brewer(
+        type = "qual",
+        palette = 2,
+        direction = 1,
+        aesthetics = "fill"
+        ) +
+    theme_minimal()
 ```
 
 ```{r}
@@ -35,7 +58,16 @@ data_raw |>
 data_raw |> 
     group_by(Race) |> 
     summarise(Count = n()) |> 
-    arrange(Count |> desc())
+    arrange(Count |> desc()) |> 
+    ggplot2::ggplot(aes(y= Race, x = Count, fill = Race)) +
+    geom_col() +
+    scale_fill_brewer(
+        type = "qual",
+        palette = 2,
+        direction = 1,
+        aesthetics = "fill"
+        ) +
+    theme_minimal()
 ```
 
 ```{r}
@@ -43,5 +75,14 @@ data_raw |>
 data_raw |> 
     group_by(`Education Level`) |> 
     summarise(Count = n()) |> 
-    arrange(Count |> desc())
+    arrange(Count |> desc()) |> 
+    ggplot2::ggplot(aes(y= `Education Level`, x = Count, fill = `Education Level`)) +
+    geom_col() +
+    scale_fill_brewer(
+        type = "qual",
+        palette = 2,
+        direction = 1,
+        aesthetics = "fill"
+        ) +
+    theme_minimal()
 ```
