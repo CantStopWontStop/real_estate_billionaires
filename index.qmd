@@ -43,26 +43,16 @@ data_raw <- data_raw |>
     mutate(`net_worth_dollar` =  scales::label_dollar()(data_raw$`Net Worth`)) 
 
 data_raw |> 
-    gt_preview()
+  select(-`Head Shot`) |> 
+  DT::datatable()
 
 
 
 ```
 
+::: {layout="[[30,70], [100]]", column = 'screen'}
 ```{r}
 
-pal_c <- 
-  colorRampPalette(
-    c("#00863f", "grey85", "#993334")
-  )(5)
-
-plot(1, type = "n", axes = FALSE, xlab = "", ylab = "")
-
-legend("top", fill = pal_c, legend = 1:5, horiz = TRUE, bty = "n")
-
-```
-
-```{r}
 data_raw |> 
     mutate(
         religion = case_when(
@@ -92,18 +82,11 @@ data_raw |>
 ```
 
 ```{r}
-#|layout-ncol: 3
-#|llayout-nrow: 1
 
 data_raw$Gender <- factor(data_raw$Gender, levels = c("Male", "Female"))
 
 data_raw$`Education Level` <- factor(data_raw$`Education Level`, levels = c("High School", "Bachelors", "Masters", "Doctorate"))
 
-
-
-```
-
-```{r}
 
 plot_bars <- function(data, group, sort_by = "count") {
   if (sort_by == "count") {
@@ -114,7 +97,11 @@ plot_bars <- function(data, group, sort_by = "count") {
       ggplot(aes(y = reorder(!!sym(group), Count), x = Count, fill = !!sym(group))) +
       geom_col() +
       scale_fill_manual(values = afromation_cols) +
-      labs(y = group, fill = glue::glue('{group}'))
+      labs(y = group, fill = glue::glue('{group}'))+
+      theme(legend.position = 'top',
+            text = element_text(size = 16), 
+            axis.title.x = element_blank(),
+            legend.title = element_blank())
   } else if (sort_by == "factor") {
     data %>%
       group_by(!!sym(group)) %>%
@@ -122,40 +109,34 @@ plot_bars <- function(data, group, sort_by = "count") {
       ggplot(aes(y = reorder(!!sym(group), Count), x = Count, fill = !!sym(group))) +
       geom_col() +
       scale_fill_manual(values = afromation_cols) +
-      labs(y = group, fill = glue::glue('{group}'))
+      labs(y = group, fill = glue::glue('{group}')) +
+      theme(legend.position = 'top',
+            text = element_text(size = 16), 
+            axis.title.x = element_blank(),
+            legend.title = element_blank())
   } else {
     stop("Invalid value for 'sort_by'. Use 'count' or 'factor'.")
   }
 }
-```
 
-```{r}
 plot_bars(data = data_raw, group = "Gender", sort_by = "count")
-```
 
-```{r}
 
 plot_bars(data = data_raw, group = "Religion")
 
 plot_bars(data = data_raw, group = "Race", sort_by = "factor")
 
-
-```
-
-```{r}
-
-
-```
-
-```{r}
-
-
-data_raw |> 
+data_raw |>
     group_by(`Education Level`) |> 
     summarise(Count = n()) |> 
     arrange(Count |> desc()) |> 
     ggplot2::ggplot(aes(y= `Education Level`, x = Count, fill = `Education Level`)) +
     geom_col() +
   scale_fill_manual(values = afromation_cols) +
-    theme_minimal()
+    theme_minimal()+
+      theme(legend.position = 'top',
+            text = element_text(size = 16), 
+            axis.title.x = element_blank(),
+            legend.title = element_blank())
 ```
+:::
