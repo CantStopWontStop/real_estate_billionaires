@@ -12,65 +12,143 @@ execute:
 ```{r}
 library(tidyverse)
 library(googlesheets4)
+library(DT)
+library(gt)
+library(gtExtras)
 ```
 
 ```{r}
-data_raw <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1ICjbS8SRTXU4VpcypX9Owot3RtCkByDu3sNh0n8Q6-o/edit#gid=0')
-data_raw
+afromation_cols <- c("#2E2E2E", "#2b6144","#842c1d", "#CDBC88","#4f839e", "#bccbf3", "#e4e4e4"
+)
+
+theme_set(theme_minimal())
 ```
 
 ```{r}
+#| column: screen-inset
+data_raw <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1ICjbS8SRTXU4VpcypX9Owot3RtCkByDu3sNh0n8Q6-o/edit#gid=0')|> 
+    select(Name, 
+           `Net Worth`, 
+           Age, 
+           Race, 
+           Gender,
+           Religion, 
+           `Education Level`,
+           City, 
+           State,
+           Country,
+           `Head Shot`)
+
+data_raw <- data_raw |> 
+    mutate(`net_worth_dollar` =  scales::label_dollar()(data_raw$`Net Worth`)) 
 
 data_raw |> 
-    group_by(Gender) |> 
-    summarise(Count = n()) |> 
-    arrange(Count |> desc()) |> 
-    ggplot2::ggplot(aes(y= Gender, x = Count, fill = Gender)) +
-    geom_col() +
-    scale_fill_brewer(
-        type = "qual",
-        palette = 2,
-        direction = 1,
-        aesthetics = "fill"
-        ) +
-    theme_minimal()
+    gt_preview()
+
+
+
 ```
 
 ```{r}
 
+pal_c <- 
+  colorRampPalette(
+    c("#00863f", "grey85", "#993334")
+  )(5)
+
+plot(1, type = "n", axes = FALSE, xlab = "", ylab = "")
+
+legend("top", fill = pal_c, legend = 1:5, horiz = TRUE, bty = "n")
+
+```
+
+```{r}
 data_raw |> 
-    group_by(Religion) |> 
-    summarise(Count = n()) |> 
-    arrange(Count |> desc()) |> 
-    ggplot2::ggplot(aes(y= Religion, x = Count, fill = Religion)) +
-    geom_col() +
-    scale_fill_brewer(
-        type = "qual",
-        palette = 2,
-        direction = 1,
-        aesthetics = "fill"
-        ) +
-    theme_minimal()
+    mutate(
+        religion = case_when(
+            Religion == 'Catholic' ~ 'cross',
+            Religion |> str_detect('Jewish') ~ 'star-of-david',
+            Religion == 'Unknown' ~ 'question',
+            TRUE ~ NA),
+        gender  = case_when(
+            Gender == 'Male'~'mars',
+            TRUE ~'venus'
+            )
+        ) |> 
+    select(Name, 
+           Age, Race, 
+           gender, religion, 
+           `Net Worth`,
+           net_worth_dollar) |>
+    gt() |> 
+    gt_fa_column(religion) |> 
+    gt_fa_column(gender) |>
+    gt_plt_bar(column = `Net Worth`, 
+               color = '#34713e') |> 
+    cols_width(
+        `Net Worth` ~ px(200),
+        contains('icon') ~px(20)) |> 
+    gt_theme_espn()
+```
+
+```{r}
+#|layout-ncol: 3
+#|llayout-nrow: 1
+
+data_raw$Gender <- factor(data_raw$Gender, levels = c("Male", "Female"))
+
+data_raw$`Education Level` <- factor(data_raw$`Education Level`, levels = c("High School", "Bachelors", "Masters", "Doctorate"))
+
+
+
 ```
 
 ```{r}
 
-data_raw |> 
-    group_by(Race) |> 
-    summarise(Count = n()) |> 
-    arrange(Count |> desc()) |> 
-    ggplot2::ggplot(aes(y= Race, x = Count, fill = Race)) +
-    geom_col() +
-    scale_fill_brewer(
-        type = "qual",
-        palette = 2,
-        direction = 1,
-        aesthetics = "fill"
-        ) +
-    theme_minimal()
+plot_bars <- function(data, group, sort_by = "count") {
+  if (sort_by == "count") {
+    data %>%
+      group_by(!!sym(group)) %>%
+      summarise(Count = n()) %>%
+      arrange(desc(Count)) %>%
+      ggplot(aes(y = reorder(!!sym(group), Count), x = Count, fill = !!sym(group))) +
+      geom_col() +
+      scale_fill_manual(values = afromation_cols) +
+      labs(y = group, fill = glue::glue('{group}'))
+  } else if (sort_by == "factor") {
+    data %>%
+      group_by(!!sym(group)) %>%
+      summarise(Count = n()) %>%
+      ggplot(aes(y = reorder(!!sym(group), Count), x = Count, fill = !!sym(group))) +
+      geom_col() +
+      scale_fill_manual(values = afromation_cols) +
+      labs(y = group, fill = glue::glue('{group}'))
+  } else {
+    stop("Invalid value for 'sort_by'. Use 'count' or 'factor'.")
+  }
+}
 ```
 
 ```{r}
+plot_bars(data = data_raw, group = "Gender", sort_by = "count")
+```
+
+```{r}
+
+plot_bars(data = data_raw, group = "Religion")
+
+plot_bars(data = data_raw, group = "Race", sort_by = "factor")
+
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+
 
 data_raw |> 
     group_by(`Education Level`) |> 
@@ -78,11 +156,6 @@ data_raw |>
     arrange(Count |> desc()) |> 
     ggplot2::ggplot(aes(y= `Education Level`, x = Count, fill = `Education Level`)) +
     geom_col() +
-    scale_fill_brewer(
-        type = "qual",
-        palette = 2,
-        direction = 1,
-        aesthetics = "fill"
-        ) +
+  scale_fill_manual(values = afromation_cols) +
     theme_minimal()
 ```

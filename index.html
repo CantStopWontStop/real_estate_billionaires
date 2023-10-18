@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -60,33 +60,565 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 23 × 23
-   Name   `Net Worth` Company   Age DoB                 Deceased `Date of Death`
-   &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dttm&gt;              &lt;lgl&gt;    &lt;list&gt;         
- 1 Donal… 16200000000 Irvine…    91 1932-05-11 00:00:00 FALSE    &lt;chr [1]&gt;      
- 2 Steph…  8300000000 The Re…    83 1940-05-10 00:00:00 FALSE    &lt;chr [1]&gt;      
- 3 Sun H…  6900000000 Sunac …    60 1963-01-01 00:00:00 FALSE    &lt;chr [1]&gt;      
- 4 Neil …  6400000000 Walton…    85 1938-01-01 00:00:00 FALSE    &lt;chr [1]&gt;      
- 5 Leona…  6200000000 Hartz …    85 1938-03-28 00:00:00 FALSE    &lt;chr [1]&gt;      
- 6 Edwar…  6100000000 Majest…    85 1938-01-01 00:00:00 FALSE    &lt;chr [1]&gt;      
- 7 John …  6100000000 The So…    84 1939-05-23 00:00:00 FALSE    &lt;chr [1]&gt;      
- 8 Sam Z…  6000000000 Equity…    81 1941-09-28 00:00:00 TRUE     &lt;dttm [1]&gt;     
- 9 Jeff …  5100000000 The Gr…    68 1954-12-10 00:00:00 FALSE    &lt;chr [1]&gt;      
-10 Ted L…  4700000000 Lerner…    97 1925-10-15 00:00:00 TRUE     &lt;dttm [1]&gt;     
-# ℹ 13 more rows
-# ℹ 16 more variables: Nationality &lt;chr&gt;, Race &lt;chr&gt;, Religion &lt;chr&gt;,
-#   Gender &lt;chr&gt;, Education &lt;chr&gt;, School &lt;chr&gt;, `Education Level` &lt;chr&gt;,
-#   Degree &lt;chr&gt;, `Birth City` &lt;chr&gt;, `Current Residence` &lt;chr&gt;,
-#   `Specific Real Estate Industry` &lt;chr&gt;,
-#   `Niche (Retail, Industrial, Residential, Apartments, Hotel, etc.)` &lt;chr&gt;,
-#   `Souce 1` &lt;chr&gt;, `Source 2` &lt;chr&gt;, `Source 3` &lt;chr&gt;, ...23 &lt;chr&gt;</code></pre>
+<div class="cell page-columns page-full">
+<div class="cell-output-display column-screen-inset">
+
+<div id="hvwiyzqiqd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hvwiyzqiqd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hvwiyzqiqd thead, #hvwiyzqiqd tbody, #hvwiyzqiqd tfoot, #hvwiyzqiqd tr, #hvwiyzqiqd td, #hvwiyzqiqd th {
+  border-style: none;
+}
+
+#hvwiyzqiqd p {
+  margin: 0;
+  padding: 0;
+}
+
+#hvwiyzqiqd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hvwiyzqiqd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hvwiyzqiqd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hvwiyzqiqd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hvwiyzqiqd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hvwiyzqiqd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hvwiyzqiqd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hvwiyzqiqd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hvwiyzqiqd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hvwiyzqiqd .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hvwiyzqiqd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hvwiyzqiqd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hvwiyzqiqd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hvwiyzqiqd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hvwiyzqiqd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hvwiyzqiqd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hvwiyzqiqd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hvwiyzqiqd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hvwiyzqiqd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hvwiyzqiqd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hvwiyzqiqd .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hvwiyzqiqd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hvwiyzqiqd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hvwiyzqiqd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hvwiyzqiqd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hvwiyzqiqd .gt_left {
+  text-align: left;
+}
+
+#hvwiyzqiqd .gt_center {
+  text-align: center;
+}
+
+#hvwiyzqiqd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hvwiyzqiqd .gt_font_normal {
+  font-weight: normal;
+}
+
+#hvwiyzqiqd .gt_font_bold {
+  font-weight: bold;
+}
+
+#hvwiyzqiqd .gt_font_italic {
+  font-style: italic;
+}
+
+#hvwiyzqiqd .gt_super {
+  font-size: 65%;
+}
+
+#hvwiyzqiqd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hvwiyzqiqd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hvwiyzqiqd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hvwiyzqiqd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hvwiyzqiqd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hvwiyzqiqd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hvwiyzqiqd .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Name">Name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Net Worth">Net Worth</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Race">Race</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Gender">Gender</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Religion">Religion</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Education Level">Education Level</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="City">City</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="State">State</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Country">Country</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Head Shot">Head Shot</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="net_worth_dollar">net_worth_dollar</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">1</th>
+<td headers="stub_1_1 Name" class="gt_row gt_left">Donald Bren</td>
+<td headers="stub_1_1 Net Worth" class="gt_row gt_right">1.62e+10</td>
+<td headers="stub_1_1 Age" class="gt_row gt_right">91</td>
+<td headers="stub_1_1 Race" class="gt_row gt_left">White</td>
+<td headers="stub_1_1 Gender" class="gt_row gt_left">Male</td>
+<td headers="stub_1_1 Religion" class="gt_row gt_left">Jewish</td>
+<td headers="stub_1_1 Education Level" class="gt_row gt_left">Bachelors</td>
+<td headers="stub_1_1 City" class="gt_row gt_left">Newport Beach</td>
+<td headers="stub_1_1 State" class="gt_row gt_left">California</td>
+<td headers="stub_1_1 Country" class="gt_row gt_left">United States of America</td>
+<td headers="stub_1_1 Head Shot" class="gt_row gt_left">https://alchetron.com/cdn/donald-bren-5908b0ed-17e8-4140-9d48-e26caae369c-resize-750.jpeg</td>
+<td headers="stub_1_1 net_worth_dollar" class="gt_row gt_right">$16,200,000,000</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">2</th>
+<td headers="stub_1_2 Name" class="gt_row gt_left">Stephen Ross</td>
+<td headers="stub_1_2 Net Worth" class="gt_row gt_right">8.30e+09</td>
+<td headers="stub_1_2 Age" class="gt_row gt_right">83</td>
+<td headers="stub_1_2 Race" class="gt_row gt_left">White</td>
+<td headers="stub_1_2 Gender" class="gt_row gt_left">Male</td>
+<td headers="stub_1_2 Religion" class="gt_row gt_left">Jewish</td>
+<td headers="stub_1_2 Education Level" class="gt_row gt_left">Doctorate</td>
+<td headers="stub_1_2 City" class="gt_row gt_left">New York</td>
+<td headers="stub_1_2 State" class="gt_row gt_left">New York</td>
+<td headers="stub_1_2 Country" class="gt_row gt_left">United States of America</td>
+<td headers="stub_1_2 Head Shot" class="gt_row gt_left">https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/dolphins/nugicd5nvuhh6sa0yerq.jpg</td>
+<td headers="stub_1_2 net_worth_dollar" class="gt_row gt_right">$8,300,000,000</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">3</th>
+<td headers="stub_1_3 Name" class="gt_row gt_left">Sun Hongbin</td>
+<td headers="stub_1_3 Net Worth" class="gt_row gt_right">6.90e+09</td>
+<td headers="stub_1_3 Age" class="gt_row gt_right">60</td>
+<td headers="stub_1_3 Race" class="gt_row gt_left">Asian</td>
+<td headers="stub_1_3 Gender" class="gt_row gt_left">Male</td>
+<td headers="stub_1_3 Religion" class="gt_row gt_left">Unknown</td>
+<td headers="stub_1_3 Education Level" class="gt_row gt_left">Masters</td>
+<td headers="stub_1_3 City" class="gt_row gt_left">Tianjin</td>
+<td headers="stub_1_3 State" class="gt_row gt_left">Hebei</td>
+<td headers="stub_1_3 Country" class="gt_row gt_left">China</td>
+<td headers="stub_1_3 Head Shot" class="gt_row gt_left">https://www.chinadaily.com.cn/m/shanxi/images/attachement/jpg/site1/20170815/286ed488c8281afce7ae07.jpg</td>
+<td headers="stub_1_3 net_worth_dollar" class="gt_row gt_right">$6,900,000,000</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">4</th>
+<td headers="stub_1_4 Name" class="gt_row gt_left">Neil Bluhm</td>
+<td headers="stub_1_4 Net Worth" class="gt_row gt_right">6.40e+09</td>
+<td headers="stub_1_4 Age" class="gt_row gt_right">85</td>
+<td headers="stub_1_4 Race" class="gt_row gt_left">White</td>
+<td headers="stub_1_4 Gender" class="gt_row gt_left">Male</td>
+<td headers="stub_1_4 Religion" class="gt_row gt_left">Jewish</td>
+<td headers="stub_1_4 Education Level" class="gt_row gt_left">Doctorate</td>
+<td headers="stub_1_4 City" class="gt_row gt_left">Chicago</td>
+<td headers="stub_1_4 State" class="gt_row gt_left">Illinois</td>
+<td headers="stub_1_4 Country" class="gt_row gt_left">United States of America</td>
+<td headers="stub_1_4 Head Shot" class="gt_row gt_left">http://media.bizj.us/view/img/1620931/neil-bluhn*480xx1525-2033-0-34.jpg</td>
+<td headers="stub_1_4 net_worth_dollar" class="gt_row gt_right">$6,400,000,000</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">5</th>
+<td headers="stub_1_5 Name" class="gt_row gt_left">Leonard Stern</td>
+<td headers="stub_1_5 Net Worth" class="gt_row gt_right">6.20e+09</td>
+<td headers="stub_1_5 Age" class="gt_row gt_right">85</td>
+<td headers="stub_1_5 Race" class="gt_row gt_left">White</td>
+<td headers="stub_1_5 Gender" class="gt_row gt_left">Male</td>
+<td headers="stub_1_5 Religion" class="gt_row gt_left">Jewish</td>
+<td headers="stub_1_5 Education Level" class="gt_row gt_left">Masters</td>
+<td headers="stub_1_5 City" class="gt_row gt_left">New York</td>
+<td headers="stub_1_5 State" class="gt_row gt_left">New York</td>
+<td headers="stub_1_5 Country" class="gt_row gt_left">United States of America</td>
+<td headers="stub_1_5 Head Shot" class="gt_row gt_left">https://images.squarespace-cdn.com/content/v1/58a77602893fc06cb704fd12/1504450330422-GQPI0W61RWJISJRANTGM/416x416.jpg?format=1500w</td>
+<td headers="stub_1_5 net_worth_dollar" class="gt_row gt_right">$6,200,000,000</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier; font-size: x-small; background-color: #E4E4E4;">6..22</th>
+<td headers="stub_1_6 Name" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Net Worth" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Age" class="gt_row gt_right" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Race" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Gender" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Religion" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Education Level" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 City" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 State" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Country" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Head Shot" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 net_worth_dollar" class="gt_row gt_right" style="background-color: #E4E4E4;"></td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">23</th>
+<td headers="stub_1_7 Name" class="gt_row gt_left">Donald Horton &amp; family</td>
+<td headers="stub_1_7 Net Worth" class="gt_row gt_right">2.90e+09</td>
+<td headers="stub_1_7 Age" class="gt_row gt_right">73</td>
+<td headers="stub_1_7 Race" class="gt_row gt_left">White</td>
+<td headers="stub_1_7 Gender" class="gt_row gt_left">Male</td>
+<td headers="stub_1_7 Religion" class="gt_row gt_left">Jewish</td>
+<td headers="stub_1_7 Education Level" class="gt_row gt_left">Bachelors</td>
+<td headers="stub_1_7 City" class="gt_row gt_left">Fort Worth</td>
+<td headers="stub_1_7 State" class="gt_row gt_left">Texas</td>
+<td headers="stub_1_7 Country" class="gt_row gt_left">United States of America</td>
+<td headers="stub_1_7 Head Shot" class="gt_row gt_left">https://imageio.forbes.com/specials-images/imageserve/60464ead584901b00b3ef273/0x0.jpg?format=jpg&amp;crop=1304,1304,x182,y83,safe&amp;height=416&amp;width=416&amp;fit=bounds</td>
+<td headers="stub_1_7 net_worth_dollar" class="gt_row gt_right">$2,900,000,000</td></tr>
+  </tbody>
+  
+  
+</table>
 </div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -96,12 +628,655 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+
+<div id="zjdseopmbx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#zjdseopmbx table {
+  font-family: Lato, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zjdseopmbx thead, #zjdseopmbx tbody, #zjdseopmbx tfoot, #zjdseopmbx tr, #zjdseopmbx td, #zjdseopmbx th {
+  border-style: none;
+}
+
+#zjdseopmbx p {
+  margin: 0;
+  padding: 0;
+}
+
+#zjdseopmbx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: #FFFFFF;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zjdseopmbx .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zjdseopmbx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zjdseopmbx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zjdseopmbx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zjdseopmbx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zjdseopmbx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zjdseopmbx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zjdseopmbx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zjdseopmbx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zjdseopmbx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zjdseopmbx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zjdseopmbx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zjdseopmbx .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zjdseopmbx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjdseopmbx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zjdseopmbx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zjdseopmbx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zjdseopmbx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjdseopmbx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zjdseopmbx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjdseopmbx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_striped {
+  background-color: #FAFAFA;
+}
+
+#zjdseopmbx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjdseopmbx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zjdseopmbx .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjdseopmbx .gt_left {
+  text-align: left;
+}
+
+#zjdseopmbx .gt_center {
+  text-align: center;
+}
+
+#zjdseopmbx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zjdseopmbx .gt_font_normal {
+  font-weight: normal;
+}
+
+#zjdseopmbx .gt_font_bold {
+  font-weight: bold;
+}
+
+#zjdseopmbx .gt_font_italic {
+  font-style: italic;
+}
+
+#zjdseopmbx .gt_super {
+  font-size: 65%;
+}
+
+#zjdseopmbx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zjdseopmbx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zjdseopmbx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zjdseopmbx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zjdseopmbx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zjdseopmbx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zjdseopmbx .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" style="table-layout: fixed;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <colgroup>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col style="width:200px;">
+    <col>
+  </colgroup>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Name">Name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Race">Race</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="gender">gender</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="religion">religion</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Net Worth">Net Worth</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="net_worth_dollar">net_worth_dollar</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Name" class="gt_row gt_left">Donald Bren</td>
+<td headers="Age" class="gt_row gt_right">91</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="98.37" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$16,200,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Stephen Ross</td>
+<td headers="Age" class="gt_row gt_right gt_striped">83</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="50.40" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$8,300,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Sun Hongbin</td>
+<td headers="Age" class="gt_row gt_right">60</td>
+<td headers="Race" class="gt_row gt_left">Asian</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="question" aria-label="question" role="img" style="padding:0px"><svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:20px;width:12.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#E69F00;overflow:visible;position:relative;"><title>Question</title><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="41.90" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$6,900,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Neil Bluhm</td>
+<td headers="Age" class="gt_row gt_right gt_striped">85</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="38.86" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$6,400,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Leonard Stern</td>
+<td headers="Age" class="gt_row gt_right">85</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="37.65" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$6,200,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Edward Roski, Jr.</td>
+<td headers="Age" class="gt_row gt_right gt_striped">85</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="cross" aria-label="cross" role="img" style="padding:0px"><svg aria-label="Cross" role="img" viewbox="0 0 384 512" style="height:20px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#56B4E9;overflow:visible;position:relative;"><title>Cross</title><path d="M176 0c-26.5 0-48 21.5-48 48v80H48c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h80V464c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V256h80c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48H256V48c0-26.5-21.5-48-48-48H176z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="37.04" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$6,100,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">John A. Sobrato &amp; family</td>
+<td headers="Age" class="gt_row gt_right">84</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="cross" aria-label="cross" role="img" style="padding:0px"><svg aria-label="Cross" role="img" viewbox="0 0 384 512" style="height:20px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#56B4E9;overflow:visible;position:relative;"><title>Cross</title><path d="M176 0c-26.5 0-48 21.5-48 48v80H48c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h80V464c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V256h80c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48H256V48c0-26.5-21.5-48-48-48H176z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="37.04" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$6,100,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Sam Zell</td>
+<td headers="Age" class="gt_row gt_right gt_striped">81</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="36.43" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$6,000,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Jeff Greene</td>
+<td headers="Age" class="gt_row gt_right">68</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="30.97" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$5,100,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Ted Lerner &amp; family</td>
+<td headers="Age" class="gt_row gt_right gt_striped">97</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="28.54" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$4,700,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Igor Olenicoff</td>
+<td headers="Age" class="gt_row gt_right">81</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="28.54" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$4,700,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Rick Caruso</td>
+<td headers="Age" class="gt_row gt_right gt_striped">64</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="cross" aria-label="cross" role="img" style="padding:0px"><svg aria-label="Cross" role="img" viewbox="0 0 384 512" style="height:20px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#56B4E9;overflow:visible;position:relative;"><title>Cross</title><path d="M176 0c-26.5 0-48 21.5-48 48v80H48c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h80V464c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V256h80c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48H256V48c0-26.5-21.5-48-48-48H176z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="26.11" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$4,300,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Ty Warner</td>
+<td headers="Age" class="gt_row gt_right">78</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="26.11" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$4,300,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Richard LeFrak &amp; family</td>
+<td headers="Age" class="gt_row gt_right gt_striped">78</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="23.68" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$3,900,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Donald Sterling</td>
+<td headers="Age" class="gt_row gt_right">89</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="23.68" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$3,900,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Charles Cohen</td>
+<td headers="Age" class="gt_row gt_right gt_striped">71</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="21.86" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$3,600,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Joseph "Jay" Paul</td>
+<td headers="Age" class="gt_row gt_right">76</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="question" aria-label="question" role="img" style="padding:0px"><svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:20px;width:12.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#E69F00;overflow:visible;position:relative;"><title>Question</title><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="21.86" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$3,600,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Herbert Simon</td>
+<td headers="Age" class="gt_row gt_right gt_striped">88</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="20.65" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$3,400,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">H. Ross Perot, Jr.</td>
+<td headers="Age" class="gt_row gt_right">64</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="19.43" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$3,200,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Jeff Sutton</td>
+<td headers="Age" class="gt_row gt_right gt_striped">63</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="18.82" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$3,100,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Mortimer Zuckerman</td>
+<td headers="Age" class="gt_row gt_right">86</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="18.22" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$3,000,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left gt_striped">Jane Goldman</td>
+<td headers="Age" class="gt_row gt_right gt_striped">68</td>
+<td headers="Race" class="gt_row gt_left gt_striped">White</td>
+<td headers="gender" class="gt_row gt_left gt_striped"><div title="venus" aria-label="venus" role="img" style="padding:0px"><svg aria-label="Venus" role="img" viewbox="0 0 384 512" style="height:20px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#E69F00;overflow:visible;position:relative;"><title>Venus</title><path d="M80 176a112 112 0 1 1 224 0A112 112 0 1 1 80 176zM224 349.1c81.9-15 144-86.8 144-173.1C368 78.8 289.2 0 192 0S16 78.8 16 176c0 86.3 62.1 158.1 144 173.1V384H128c-17.7 0-32 14.3-32 32s14.3 32 32 32h32v32c0 17.7 14.3 32 32 32s32-14.3 32-32V448h32c17.7 0 32-14.3 32-32s-14.3-32-32-32H224V349.1z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left gt_striped"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left gt_striped"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="17.61" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right gt_striped">$2,900,000,000</td></tr>
+    <tr><td headers="Name" class="gt_row gt_left">Donald Horton &amp; family</td>
+<td headers="Age" class="gt_row gt_right">73</td>
+<td headers="Race" class="gt_row gt_left">White</td>
+<td headers="gender" class="gt_row gt_left"><div title="mars" aria-label="mars" role="img" style="padding:0px"><svg aria-label="Mars" role="img" viewbox="0 0 448 512" style="height:20px;width:17.5px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Mars</title><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg></div></td>
+<td headers="religion" class="gt_row gt_left"><div title="star-of-david" aria-label="star-of-david" role="img" style="padding:0px"><svg aria-label="Star Of David" role="img" viewbox="0 0 512 512" style="height:20px;width:20px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#000000;overflow:visible;position:relative;"><title>Star Of David</title><path d="M404.2 309.5L383.1 344h42.3l-21.1-34.5zM371.4 256l-54-88H194.6l-54 88 54 88H317.4l54-88zm65.7 0l53.4 87c3.6 5.9 5.5 12.7 5.5 19.6c0 20.7-16.8 37.4-37.4 37.4H348.7l-56.2 91.5C284.8 504.3 270.9 512 256 512s-28.8-7.7-36.6-20.5L163.3 400H53.4C32.8 400 16 383.2 16 362.6c0-6.9 1.9-13.7 5.5-19.6l53.4-87L21.5 169c-3.6-5.9-5.5-12.7-5.5-19.6C16 128.8 32.8 112 53.4 112H163.3l56.2-91.5C227.2 7.7 241.1 0 256 0s28.8 7.7 36.6 20.5L348.7 112H458.6c20.7 0 37.4 16.8 37.4 37.4c0 6.9-1.9 13.7-5.5 19.6l-53.4 87zm-54-88l21.1 34.5L425.4 168H383.1zM283 112L256 68l-27 44h54zM128.9 168H86.6l21.1 34.5L128.9 168zM107.8 309.5L86.6 344h42.3l-21.1-34.5zM229 400l27 44 27-44H229z"></path></svg></div></td>
+<td headers="Net Worth" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="113.39pt" height="14.17pt" viewbox="0 0 113.39 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==">    <rect x="0.00" y="0.00" width="113.39" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHwxMTMuMzl8MC4wMHwxNC4xNw==)"><rect x="5.02" y="0.89" width="17.61" height="12.40" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #34713E;"></rect><line x1="5.02" y1="14.17" x2="5.02" y2="0.0000000000000018" style="stroke-width: 1.07; stroke-linecap: butt;"></line></g></svg></td>
+<td headers="net_worth_dollar" class="gt_row gt_right">$2,900,000,000</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
