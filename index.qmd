@@ -15,6 +15,7 @@ library(googlesheets4)
 library(DT)
 library(gt)
 library(gtExtras)
+library(leaflet)
 ```
 
 ```{r}
@@ -37,20 +38,21 @@ data_raw <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1I
            City, 
            State,
            Country,
-           `Head Shot`)
+           `Head Shot`, 
+           Latitude,
+           Longitude)
 
 data_raw <- data_raw |> 
     mutate(`net_worth_dollar` =  scales::label_dollar()(data_raw$`Net Worth`)) 
 
 data_raw |> 
-  select(-`Head Shot`) |> 
+  select(-`Head Shot`, -Latitude, -Longitude) |> 
   DT::datatable()
 
 
 
 ```
 
-::: {layout="[[30,70], [100]]", column = 'screen'}
 ```{r}
 
 data_raw |> 
@@ -139,4 +141,14 @@ data_raw |>
             axis.title.x = element_blank(),
             legend.title = element_blank())
 ```
-:::
+
+```{r}
+leaflet(data_raw) %>%
+  addTiles() %>%
+  addMarkers(
+    lat = ~Latitude,
+    lng = ~Longitude,
+    label = ~glue::glue('{Name} | {City}')
+  ) %>%
+  addProviderTiles("Stadia.StamenWatercolor")
+```
