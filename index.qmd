@@ -1,21 +1,36 @@
 ---
-title: "Real Estate Billionaires"
+title: "American Real Estate Billionaires"
+author: "Sorie Dumbuya"
+date: "2023-10-27"
+
 format:
     html:
         code-fold: true
-editor: visual
+
 execute: 
-  echo: false
+  eval: true
   warning: false
+  message: false
+  echo: false
+
+categories: 
+    - R
+    - ggplot
+    - mapping
+    - visualization
+    - tidyverse
+
+editor: visual
 ---
 
 ```{r}
 library(tidyverse)
-library(googlesheets4)
 library(DT)
 library(gt)
 library(gtExtras)
 library(leaflet)
+library(htmltools)
+library(googlesheets4)
 ```
 
 ```{r}
@@ -26,10 +41,17 @@ theme_set(theme_minimal())
 ```
 
 ```{r}
+files <- list.files('downloaded_images/')
+```
+
+```{r}
 #| column: screen-inset
-data_raw <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1ICjbS8SRTXU4VpcypX9Owot3RtCkByDu3sNh0n8Q6-o/edit#gid=0')|> 
+data_raw <-  googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1ICjbS8SRTXU4VpcypX9Owot3RtCkByDu3sNh0n8Q6-o/edit#gid=0') |> 
+    # readr::read_csv('data.csv')|> 
     select(Name, 
            `Net Worth`, 
+           `First Name`,
+           `Last Name`,
            Age, 
            Race, 
            Gender,
@@ -40,13 +62,22 @@ data_raw <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1I
            Country,
            `Head Shot`, 
            Latitude,
-           Longitude)
+           Longitude) |> 
+    arrange('Last Name')
 
 data_raw <- data_raw |> 
     mutate(`net_worth_dollar` =  scales::label_dollar()(data_raw$`Net Worth`)) 
 
+data_raw$`Head Shot` <- glue::glue('downloaded_images/{files}')
+
+data_raw <- data_raw |> 
+    arrange(desc(`Net Worth`))
+
 data_raw |> 
-  select(-`Head Shot`, -Latitude, -Longitude) |> 
+  select(-`Head Shot`, -Latitude, -Longitude, 
+           -`First Name`,
+           -`Last Name`,
+         -`Net Worth`,) |> 
   DT::datatable()
 
 
@@ -55,32 +86,45 @@ data_raw |>
 
 ```{r}
 
-data_raw |> 
-    mutate(
-        religion = case_when(
-            Religion == 'Catholic' ~ 'cross',
-            Religion |> str_detect('Jewish') ~ 'star-of-david',
-            Religion == 'Unknown' ~ 'question',
-            TRUE ~ NA),
-        gender  = case_when(
-            Gender == 'Male'~'mars',
-            TRUE ~'venus'
-            )
-        ) |> 
-    select(Name, 
-           Age, Race, 
-           gender, religion, 
-           `Net Worth`,
-           net_worth_dollar) |>
-    gt() |> 
-    gt_fa_column(religion) |> 
-    gt_fa_column(gender) |>
-    gt_plt_bar(column = `Net Worth`, 
-               color = '#34713e') |> 
-    cols_width(
-        `Net Worth` ~ px(200),
-        contains('icon') ~px(20)) |> 
-    gt_theme_espn()
+
+
+# Create a data frame with the image tags
+data_table <- data_raw %>%
+  mutate(
+    religion = case_when(
+      Religion == 'Catholic' ~ 'cross',
+      str_detect(Religion, 'Jewish') ~ 'star-of-david',
+      Religion == 'Unknown' ~ 'question',
+      TRUE ~ NA
+    ),
+    gender = case_when(
+      Gender == 'Male' ~ 'mars',
+      TRUE ~ 'venus'
+    )) %>%
+  select(Name, Age, Race, gender, religion, `Net Worth`, net_worth_dollar, `Head Shot`) 
+
+# Create the table
+data_table %>%
+  gt() %>%
+  gt_fa_column(religion) %>%
+  gt_fa_column(gender) %>%
+  gt_plt_bar(column = `Net Worth`, color = '#34713e') %>%
+  cols_width(
+    `Net Worth` ~ px(200),
+    contains('icon') ~ px(20)
+    ) %>% 
+    gt_img_rows(columns = `Head Shot`, 
+                img_source = 'local',
+                height = 50) %>%
+
+
+  gt_theme_espn()
+
+
+
+
+
+
 ```
 
 ```{r}
@@ -144,11 +188,64 @@ data_raw |>
 
 ```{r}
 leaflet(data_raw) %>%
-  addTiles() %>%
+  addTiles()%>%
+  setView(
+    lng = -95.7129,  # Center longitude for the USA
+    lat = 37.0902,   # Center latitude for the USA
+    zoom = 4         # Zoom level (adjust as needed)
+  ) %>%
   addMarkers(
     lat = ~Latitude,
     lng = ~Longitude,
     label = ~glue::glue('{Name} | {City}')
-  ) %>%
-  addProviderTiles("Stadia.StamenWatercolor")
+  )
+```
+
+```{r}
+map <- leaflet() %>%
+  addTiles()  # Add the default tileset as the map background
+
+# Add city markers to the map
+for (i in 1:nrow(data_raw)) {
+  map <- map %>%
+    addMarkers(
+      lng = data_raw$Longitude[i],
+      lat = data_raw$Latitude[i],
+      popup = data_raw$City[i]
+    )
+}
+
+# Display the map
+map
+```
+
+```{r}
+# usmap::us_map() |> 
+#     rename(state = full) |> 
+#     group_by(state) |> 
+#     summarise() |> 
+#     left_join(data_raw %>%
+#   group_by(State) %>%
+#     rename(state = State) |> 
+#   summarize(Count = n())) %>%
+#   mutate(Count = replace_na(Count, 0)) |>
+#   usmap::plot_usmap(data = ., 
+#                     values = "Count", 
+#                     labels = FALSE) +
+#   scale_fill_continuous(name = "Count", 
+#                         label = "Count", 
+#                         low = "#e2ede2", 
+#                         high = "#34713e")+
+#   theme(legend.position = "none")
+
+```
+
+```{r}
+# data_raw %>%
+#     rename(state = State)  |> 
+#   group_by(state) %>%
+#   summarize(Count = n()) %>%
+#   usmap::plot_usmap(data = ., values = "Count", labels = FALSE) +
+#   scale_fill_continuous(name = "Count", label = scales::comma, low = "#e2ede2", high = "#34713e") +
+#   theme(legend.position = "none")
 ```
