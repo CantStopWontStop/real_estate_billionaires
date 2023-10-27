@@ -57,6 +57,8 @@ data_raw <-  googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1
            Gender,
            Religion, 
            `Education Level`,
+           School,
+           Degree,
            City, 
            State,
            Country,
@@ -66,7 +68,8 @@ data_raw <-  googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1
     arrange('Last Name')
 
 data_raw <- data_raw |> 
-    mutate(`net_worth_dollar` =  scales::label_dollar()(data_raw$`Net Worth`)) 
+    mutate(`net_worth_dollar` =  scales::label_dollar(scale = .000001,
+                                                       big.mark = ".")(data_raw$`Net Worth`)) 
 
 data_raw$`Head Shot` <- glue::glue('downloaded_images/{files}')
 
@@ -85,6 +88,7 @@ data_raw |>
 ```
 
 ```{r}
+#| column: screen-inset
 
 
 
@@ -104,21 +108,47 @@ data_table <- data_raw %>%
   select(Name, Age, Race, gender, religion, `Net Worth`, net_worth_dollar, `Head Shot`) 
 
 # Create the table
-data_table %>%
+gt_table <- data_table %>%
   gt() %>%
   gt_fa_column(religion) %>%
   gt_fa_column(gender) %>%
-  gt_plt_bar(column = `Net Worth`, color = '#34713e') %>%
+  gt_plt_bar(column = `Net Worth`, color = '#34713e')%>%
+#   fmt_currency(
+#   currency = "dollar",
+#   use_subunits = TRUE,
+#   decimals = NULL,
+#   drop_trailing_dec_mark = TRUE,
+#   use_seps = TRUE,
+#   accounting = FALSE,
+#   scale_by = 1,
+#   suffixing = 'B',
+#   pattern = "{x}",
+#   sep_mark = ",",
+#   dec_mark = ".",
+#   force_sign = FALSE,
+#   placement = "left",
+#   incl_space = FALSE,
+#   system = c("intl", "ind"),
+#   locale = NULL
+# ) %>%
   cols_width(
     `Net Worth` ~ px(200),
-    contains('icon') ~ px(20)
+    contains('icon') ~ px(40)
     ) %>% 
     gt_img_rows(columns = `Head Shot`, 
                 img_source = 'local',
-                height = 50) %>%
+                height = 160) |> 
 
+  gt_theme_espn() |>
+  tab_style(
+      style = cell_text(
+          size = "large",
+          weight = "bold"
+          ),
+    locations = cells_body(columns = c(Name, Age,Race, net_worth_dollar))
+    )
 
-  gt_theme_espn()
+gt_table
 
 
 
