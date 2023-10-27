@@ -137,7 +137,7 @@ gt_table <- data_table %>%
     ) %>% 
     gt_img_rows(columns = `Head Shot`, 
                 img_source = 'local',
-                height = 160) |> 
+                height = 120) |> 
 
   gt_theme_espn() |>
   tab_style(
