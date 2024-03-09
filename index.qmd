@@ -31,6 +31,10 @@ library(gtExtras)
 library(leaflet)
 library(htmltools)
 library(googlesheets4)
+library(treemap)
+library(treemapify)
+library(waffle)
+library(wordcloud2)
 ```
 
 ```{r}
@@ -45,7 +49,7 @@ files <- list.files('downloaded_images/')
 ```
 
 ```{r}
-#| column: screen-inset
+
 data_raw <-  googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1ICjbS8SRTXU4VpcypX9Owot3RtCkByDu3sNh0n8Q6-o/edit#gid=0') |> 
     # readr::read_csv('data.csv')|> 
     select(Name, 
@@ -80,8 +84,8 @@ data_raw |>
   select(-`Head Shot`, -Latitude, -Longitude, 
            -`First Name`,
            -`Last Name`,
-         -`Net Worth`,) |> 
-  DT::datatable()
+         -`Net Worth`,-State, -Country,-School, -Gender, -Religion) |> 
+  DT::datatable(options = list(pageLength = 30))
 
 
 
@@ -105,14 +109,22 @@ data_table <- data_raw %>%
       Gender == 'Male' ~ 'mars',
       TRUE ~ 'venus'
     )) %>%
-  select(Name, Age, Race, gender, religion, `Net Worth`, net_worth_dollar, `Head Shot`) 
+  select(Name,
+         Age,
+         Race,
+         gender,
+         religion,
+         `Net Worth`,
+         net_worth_dollar,
+         `Head Shot`) 
 
 # Create the table
 gt_table <- data_table %>%
   gt() %>%
   gt_fa_column(religion) %>%
   gt_fa_column(gender) %>%
-  gt_plt_bar(column = `Net Worth`, color = '#34713e')%>%
+  gt_plt_bar(column = `Net Worth`,
+             color = '#34713e') %>%
 #   fmt_currency(
 #   currency = "dollar",
 #   use_subunits = TRUE,
@@ -157,7 +169,11 @@ gt_table
 
 ```
 
+# Education
+
 ```{r}
+#| layout-nrow: 1
+#| column: screen-inset
 
 data_raw$Gender <- factor(data_raw$Gender, levels = c("Male", "Female"))
 
@@ -195,12 +211,6 @@ plot_bars <- function(data, group, sort_by = "count") {
   }
 }
 
-plot_bars(data = data_raw, group = "Gender", sort_by = "count")
-
-
-plot_bars(data = data_raw, group = "Religion")
-
-plot_bars(data = data_raw, group = "Race", sort_by = "factor")
 
 data_raw |>
     group_by(`Education Level`) |> 
@@ -213,40 +223,58 @@ data_raw |>
       theme(legend.position = 'top',
             text = element_text(size = 16), 
             axis.title.x = element_blank(),
-            legend.title = element_blank())
+            legend.title = element_blank()) 
+
+
+data_schools <- data_raw |> 
+    drop_na(School) |> 
+    separate_longer_delim(School,delim =  ";") |> 
+    count(School, sort=TRUE) |> 
+    mutate(freq = n^5)
+# 
+# wordcloud(words=data_schools$School,
+#           freq = data_schools$freq, min.freq = 1,
+#           max.words=200,
+#           random.order=FALSE,
+#           rot.per=0.35,
+#           colors=brewer.pal(8, "Dark2"))
+
+wordcloud2(data_schools,size=.3,color = "darkgreen")
+
+data_schools |> 
+    mutate(percent = n/sum(n),
+           Percent = n/sum(n) *100 ,
+           ypos = cumsum(Percent)- 0.5*Percent,
+           Percent = round(Percent, 1),
+           label = glue::glue('{School}
+                              {n}'),
+           ymax = cumsum(percent)) |> 
+    ggplot(aes(area = n, fill = n,
+               label = label)) +
+  treemapify::geom_treemap() +
+  treemapify::geom_treemap_text(colour = "white",
+                    place = "centre",
+                    size = 15) +
+  theme(legend.position = "none")
+
 ```
 
 ```{r}
-leaflet(data_raw) %>%
-  addTiles()%>%
-  setView(
-    lng = -95.7129,  # Center longitude for the USA
-    lat = 37.0902,   # Center latitude for the USA
-    zoom = 4         # Zoom level (adjust as needed)
-  ) %>%
-  addMarkers(
-    lat = ~Latitude,
-    lng = ~Longitude,
-    label = ~glue::glue('{Name} | {City}')
-  )
-```
-
-```{r}
-map <- leaflet() %>%
-  addTiles()  # Add the default tileset as the map background
-
-# Add city markers to the map
-for (i in 1:nrow(data_raw)) {
-  map <- map %>%
-    addMarkers(
-      lng = data_raw$Longitude[i],
-      lat = data_raw$Latitude[i],
-      popup = data_raw$City[i]
-    )
-}
-
-# Display the map
-map
+# map <- leaflet() %>%
+#   addTiles()  # Add the default tileset as the map background
+# 
+# # Add city markers to the map
+# for (i in 1:nrow(data_raw)) {
+#   map <- map %>%
+#     addMarkers(
+#       lng = data_raw$Longitude[i],
+#       lat = data_raw$Latitude[i],
+#       popup = data_raw$City[i]
+#     )
+# }
+# 
+# # Display the map
+# map
 ```
 
 ```{r}
@@ -270,12 +298,171 @@ map
 
 ```
 
+# Age
+
 ```{r}
-# data_raw %>%
-#     rename(state = State)  |> 
-#   group_by(state) %>%
-#   summarize(Count = n()) %>%
-#   usmap::plot_usmap(data = ., values = "Count", labels = FALSE) +
-#   scale_fill_continuous(name = "Count", label = scales::comma, low = "#e2ede2", high = "#34713e") +
-#   theme(legend.position = "none")
+#| layout-nrow: 1
+#| column: screen-inset
+
+
+data_raw |> 
+    ggplot(aes( x= Age)) +
+        geom_density(fill="#2b6144") +
+        scale_x_continuous(limits = c(0,120),
+                           breaks = c(0,10,20,30,40,50,60,70,80,90,100))
+
+data_raw |> 
+    ggplot(aes(x=Age)) + 
+    geom_histogram(binwidth=5, fill="#2b6144", color="#e9ecef")
+
+```
+
+# Gender
+
+```{r}
+#| layout-nrow: 1
+#| column: screen-inset
+
+
+data_pie <- data_raw |> 
+    group_by(Gender) |> 
+    summarise(Count = n()) |> 
+    mutate(percent = Count/sum(Count),
+           Percent = Count/sum(Count) *100 ,
+           ypos = cumsum(Percent)- 0.5*Percent,
+           Percent = round(Percent, 1),
+           label = glue::glue('{Gender}
+                              {Percent}%'),
+           ymax = cumsum(percent)) 
+
+data_pie$ymin = c(0,head(data_pie$ymax, n=-1))
+
+data_pie$labelPosition <- (data_pie$ymax + data_pie$ymin) / 2
+
+data_pie |>
+    ggplot( aes(ymax=ymax, ymin=ymin,xmax=4, xmin=3, fill=Gender)) +
+        # geom_bar(stat="identity", width=1) +
+        geom_rect() +
+        geom_text( x=2, 
+                   aes(y=labelPosition, 
+                       label=label, 
+                       color=Gender), 
+                   size=5) + # x here controls label position (inner / outer)
+        coord_polar(theta = "y") +
+        theme_void()+
+        theme(legend.position="none") +
+        # geom_text(aes(y = ypos, label = label),
+        #           color = "white", size=4) +
+        scale_fill_brewer(palette="Set1")+
+        scale_color_brewer(palette="Set1")+
+
+        xlim(c(-1,4))
+
+
+ggplot(data_pie, aes(area = Count, fill = Count,
+               label = label)) +
+  treemapify::geom_treemap() +
+  treemapify::geom_treemap_text(colour = "white",
+                    place = "centre",
+                    size = 15) +
+  theme(legend.position = "none")
+
+plot_bars(data = data_raw, group = "Gender", sort_by = "count")
+
+
+
+```
+
+# Religion
+
+```{r}
+#| layout-nrow: 2
+#| column: screen-inset
+
+
+data_pie_rel <- data_raw |> 
+    group_by(Religion) |> 
+    summarise(Count = n()) |> 
+    mutate(percent = Count/sum(Count),
+           Percent = Count/sum(Count) *100 ,
+           ypos = cumsum(Percent)- 0.5*Percent,
+           Percent = round(Percent, 1),
+           label = glue::glue('{Religion}
+                              {Percent}%'),
+           ymax = cumsum(percent)) 
+
+data_pie_rel$ymin = c(0,head(data_pie_rel$ymax, n=-1))
+
+data_pie_rel$labelPosition <- (data_pie_rel$ymax + data_pie_rel$ymin) / 2
+
+data_pie_rel |>
+    ggplot( aes(ymax=ymax, ymin=ymin,xmax=4, xmin=3, fill=Religion)) +
+        # geom_bar(stat="identity", width=1) +
+        geom_rect() +
+        geom_text( x=2, 
+                   aes(y=labelPosition, 
+                       label=label, 
+                       color=Religion), 
+                   size=5) + # x here controls label position (inner / outer)
+        coord_polar(theta = "y") +
+        theme_void()+
+        theme(legend.position="none") +
+        # geom_text(aes(y = ypos, label = label),
+        #           color = "white", size=4) +
+        scale_fill_brewer(palette="Set1")+
+        scale_color_brewer(palette="Set1")+
+
+        xlim(c(-1,4))
+
+treemap(data_pie_rel,
+            index=c("Religion"),
+            vSize="Count",
+            type="index",
+            palette = "Set2",
+            bg.labels=c("white"),
+            align.labels=list(
+              c("center", "center"), 
+              c("right", "bottom")
+            )  
+          )     
+
+ggplot(data_pie_rel, aes(area = Count, fill = Count,
+               label = label)) +
+  treemapify::geom_treemap() +
+  treemapify::geom_treemap_text(colour = "white",
+                    place = "centre",
+                    size = 15) +
+  theme(legend.position = "none")
+
+religions <- data_pie_rel |>
+ #   mutate(Religion = factor(c('Jewish', 'Catholic', 'Unknown'))) |> 
+    pull(Count, Religion)
+    
+waffle(religions, rows = 6)
+
+plot_bars(data = data_raw, group = "Religion")
+
+
+
+```
+
+# Race
+
+```{r}
+plot_bars(data = data_raw, group = "Race", sort_by = "factor")
+```
+
+```{r}
+leaflet(data_raw) %>%
+  addTiles()%>%
+  setView(
+    lng = -95.7129,  # Center longitude for the USA
+    lat = 37.0902,   # Center latitude for the USA
+    zoom = 4         # Zoom level (adjust as needed)
+  ) %>%
+  addMarkers(
+    lat = ~Latitude,
+    lng = ~Longitude,
+    label = ~glue::glue('{Name} | {City}')
+  )
 ```
